@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+<title>마소금융 가상 뉴스 피드(실습용 가상 자료)</title>
+<link>https://news.maso-finance.example/briefing/</link>
+<description>본 자료는 실습용 가상 자료입니다. 마소금융그룹과 모든 수치는 교육용으로 만든 것이며 실제와 관계가 없습니다. 금리 · 규제 · 시장 · 사내 공지 기사 25건</description>
+<language>ko</language>
+<lastBuildDate>Fri, 16 Oct 2026 18:05:00 +0900</lastBuildDate>
+<item>
+<title>다음 주 그룹 AI 활용 교육 일정 안내</title>
+<link>https://news.maso-finance.example/briefing/20261016-025.html</link>
+<guid isPermaLink="false">maso-feed-F025</guid>
+<category>사내 공지</category>
+<author>briefing@maso-finance.example (마소금융그룹 사내 소식(가상))</author>
+<pubDate>Fri, 16 Oct 2026 18:00:00 +0900</pubDate>
+<description>마소금융그룹 임직원 대상 AI 활용 업무 자동화 교육이 다음 주 월요일부터 사흘간 열린다. (출처: 마소금융그룹 사내 소식(가상) · 실습용 가상 기사)</description>
+</item>
+<item>
+<title>주간 증시 정리, 금융주 한 주 3% 올라</title>
+<link>https://news.maso-finance.example/briefing/20261016-024.html</link>
+<guid isPermaLink="false">maso-feed-F024</guid>
+<category>시장</category>
+<author>briefing@maso-finance.example (가상 마켓 데일리)</author>
+<pubDate>Fri, 16 Oct 2026 17:20:00 +0900</pubDate>
+<description>이번 주 금융 업종 지수가 3% 올랐다. 금리 하락 기대와 배당 매력이 함께 작용했다. (출처: 가상 마켓 데일리 · 실습용 가상 기사)</description>
+</item>
+<item>
+<title>예대금리차 공시 항목 보완 예정</title>
+<link>https://news.maso-finance.example/briefing/20261016-023.html</link>
+<guid isPermaLink="false">maso-feed-F023</guid>
+<category>금리</category>
+<author>briefing@maso-finance.example (가상 금융정책 브리핑)</author>
+<pubDate>Fri, 16 Oct 2026 16:40:00 +0900</pubDate>
+<description>은행별 예대금리차 공시에 신규 취급액 기준 항목이 추가될 예정이다. 소비자 비교 편의를 높이려는 조치다. (출처: 가상 금융정책 브리핑 · 실습용 가상 기사)</description>
+</item>
+<item>
+<title>준법감시팀, 외부 AI 서비스 사용 점검표 배포</title>
+<link>https://news.maso-finance.example/briefing/20261016-022.html</link>
+<guid isPermaLink="false">maso-feed-F022</guid>
+<category>사내 공지</category>
+<author>briefing@maso-finance.example (마소금융그룹 사내 소식(가상))</author>
+<pubDate>Fri, 16 Oct 2026 15:30:00 +0900</pubDate>
+<description>준법감시팀이 외부 AI 서비스를 쓸 때 확인할 점검표를 배포했다. 고객 정보와 사내 기밀 입력 금지가 첫 항목이다. (출처: 마소금융그룹 사내 소식(가상) · 실습용 가상 기사)</description>
+</item>
+<item>
+<title>국고채 3년물 2.4%대로 하락</title>
+<link>https://news.maso-finance.example/briefing/20261016-021.html</link>
+<guid isPermaLink="false">maso-feed-F021</guid>
+<category>시장</category>
+<author>briefing@maso-finance.example (마소경제신문(가상))</author>
+<pubDate>Fri, 16 Oct 2026 13:00:00 +0900</pubDate>
+<description>국고채 3년물 금리가 2.4%대로 내려왔다. 시장은 연말 금리 인하 가능성을 반영하고 있다. (출처: 마소경제신문(가상) · 실습용 가상 기사)</description>
+</item>
+<item>
+<title>금리인하요구권 안내 실태 점검 결과</title>
+<link>https://news.maso-finance.example/briefing/20261016-020.html</link>
+<guid isPermaLink="false">maso-feed-F020</guid>
+<category>규제</category>
+<author>briefing@maso-finance.example (가상 금융정책 브리핑)</author>
+<pubDate>Fri, 16 Oct 2026 10:20:00 +0900</pubDate>
+<description>금리인하요구권 안내가 대출 계약 때 빠진 사례가 일부 확인됐다. 안내 절차를 다시 점검하라는 권고가 나왔다. (출처: 가상 금융정책 브리핑 · 실습용 가상 기사)</description>
+</item>
+<item>
+<title>외국인 순매수 전환, 코스피 3,000선 근접</title>
+<link>https://news.maso-finance.example/briefing/20261016-019.html</link>
+<guid isPermaLink="false">maso-feed-F019</guid>
+<category>시장</category>
+<author>briefing@maso-finance.example (가상 마켓 데일리)</author>
+<pubDate>Fri, 16 Oct 2026 08:40:00 +0900</pubDate>
+<description>외국인이 사흘 만에 순매수로 돌아서며 코스피가 3,000선에 다가섰다. (출처: 가상 마켓 데일리 · 실습용 가상 기사)</description>
+</item>
+<item>
+<title>마소은행, 정기예금 금리 0.05%포인트 인하</title>
+<link>https://news.maso-finance.example/briefing/20261016-018.html</link>
+<guid isPermaLink="false">maso-feed-F018</guid>
+<category>금리</category>
+<author>briefing@maso-finance.example (마소경제신문(가상))</author>
+<pubDate>Fri, 16 Oct 2026 07:15:00 +0900</pubDate>
+<description>마소은행이 「마소 반짝 정기예금」 12개월 기본금리를 연 2.70%에서 연 2.65%로 낮췄다. 우대금리 조건은 그대로다. (출처: 마소경제신문(가상) · 실습용 가상 기사)</description>
+</item>
+<item>
+<title>마소은행 여신 업무 지침 개정 사항 재안내</title>
+<link>https://news.maso-finance.example/briefing/20261015-017.html</link>
+<guid isPermaLink="false">maso-feed-F017</guid>
+<category>사내 공지</category>
+<author>briefing@maso-finance.example (마소금융그룹 사내 소식(가상))</author>
+<pubDate>Thu, 15 Oct 2026 17:00:00 +0900</pubDate>
+<description>여신기획부가 3월 개정된 여신 업무 지침(예금담보대출 한도 95%)을 상품 설명서에도 반영하도록 각 부서에 다시 안내했다. (출처: 마소금융그룹 사내 소식(가상) · 실습용 가상 기사)</description>
+</item>
+<item>
+<title>보험금 지급 기한 안내 개선 권고</title>
+<link>https://news.maso-finance.example/briefing/20261015-016.html</link>
+<guid isPermaLink="false">maso-feed-F016</guid>
+<category>규제</category>
+<author>briefing@maso-finance.example (마소경제신문(가상))</author>
+<pubDate>Thu, 15 Oct 2026 13:30:00 +0900</pubDate>
+<description>보험금 지급 기한을 약관과 다르게 안내하는 사례가 있어 안내 문구를 약관 기준으로 맞추라는 권고가 나왔다. (출처: 마소경제신문(가상) · 실습용 가상 기사)</description>
+</item>
+<item>
+<title>가계대출 관리 목표 점검 회의 예정</title>
+<link>https://news.maso-finance.example/briefing/20261015-015.html</link>
+<guid isPermaLink="false">maso-feed-F015</guid>
+<category>규제</category>
+<author>briefing@maso-finance.example (가상 금융정책 브리핑)</author>
+<pubDate>Thu, 15 Oct 2026 11:40:00 +0900</pubDate>
+<description>감독당국(가상)이 다음 주 은행권과 가계대출 관리 목표 점검 회의를 열 예정이다. DSR 운영 현황을 함께 살펴본다. (출처: 가상 금융정책 브리핑 · 실습용 가상 기사)</description>
+</item>
+<item>
+<title>코스닥 1% 넘게 하락, 기술주 약세</title>
+<link>https://news.maso-finance.example/briefing/20261015-014.html</link>
+<guid isPermaLink="false">maso-feed-F014</guid>
+<category>시장</category>
+<author>briefing@maso-finance.example (가상 마켓 데일리)</author>
+<pubDate>Thu, 15 Oct 2026 09:20:00 +0900</pubDate>
+<description>코스닥 지수가 1% 넘게 내렸다. 반도체 장비주 중심으로 차익 실현 매물이 나왔다. (출처: 가상 마켓 데일리 · 실습용 가상 기사)</description>
+</item>
+<item>
+<title>저축은행 예금금리 3%대 초반 유지</title>
+<link>https://news.maso-finance.example/briefing/20261015-013.html</link>
+<guid isPermaLink="false">maso-feed-F013</guid>
+<category>금리</category>
+<author>briefing@maso-finance.example (마소경제신문(가상))</author>
+<pubDate>Thu, 15 Oct 2026 07:00:00 +0900</pubDate>
+<description>저축은행 업계의 1년 만기 정기예금 평균 금리가 3%대 초반을 유지하고 있다. 은행과의 금리 차이는 0.3%포인트 안팎이다. (출처: 마소경제신문(가상) · 실습용 가상 기사)</description>
+</item>
+<item>
+<title>마소카드, 체크카드 대중교통 할인 이벤트</title>
+<link>https://news.maso-finance.example/briefing/20261014-012.html</link>
+<guid isPermaLink="false">maso-feed-F012</guid>
+<category>사내 공지</category>
+<author>briefing@maso-finance.example (마소금융그룹 사내 소식(가상))</author>
+<pubDate>Wed, 14 Oct 2026 14:10:00 +0900</pubDate>
+<description>마소 데일리 체크카드 대중교통 할인 한도가 11월 한 달 동안 월 5,000원으로 늘어난다. (출처: 마소금융그룹 사내 소식(가상) · 실습용 가상 기사)</description>
+</item>
+<item>
+<title>예금자보호 안내 문구 표준안 마련</title>
+<link>https://news.maso-finance.example/briefing/20261014-011.html</link>
+<guid isPermaLink="false">maso-feed-F011</guid>
+<category>규제</category>
+<author>briefing@maso-finance.example (가상 금융정책 브리핑)</author>
+<pubDate>Wed, 14 Oct 2026 10:30:00 +0900</pubDate>
+<description>감독당국(가상)이 상품 설명서의 예금자보호 안내 문구 표준안을 내놓았다. 금융회사는 내년 상반기까지 설명서를 고쳐야 한다. (출처: 가상 금융정책 브리핑 · 실습용 가상 기사)</description>
+</item>
+<item>
+<title>원·달러 환율 숨 고르기, 1,388원 마감</title>
+<link>https://news.maso-finance.example/briefing/20261014-010.html</link>
+<guid isPermaLink="false">maso-feed-F010</guid>
+<category>시장</category>
+<author>briefing@maso-finance.example (가상 마켓 데일리)</author>
+<pubDate>Wed, 14 Oct 2026 08:50:00 +0900</pubDate>
+<description>환율이 전날보다 4원 내린 1,388원에 거래를 마쳤다. 외국인 순매수가 이어진 영향이다. (출처: 가상 마켓 데일리 · 실습용 가상 기사)</description>
+</item>
+<item>
+<title>주요 은행 주택담보대출 고정금리 소폭 하락</title>
+<link>https://news.maso-finance.example/briefing/20261014-009.html</link>
+<guid isPermaLink="false">maso-feed-F009</guid>
+<category>금리</category>
+<author>briefing@maso-finance.example (마소경제신문(가상))</author>
+<pubDate>Wed, 14 Oct 2026 07:20:00 +0900</pubDate>
+<description>주택담보대출 고정금리 하단이 3%대 중반으로 내려왔다. 금리 하락 기대가 반영됐다는 평가다. (출처: 마소경제신문(가상) · 실습용 가상 기사)</description>
+</item>
+<item>
+<title>경영기획부, 아침 금융 브리핑 시범 운영</title>
+<link>https://news.maso-finance.example/briefing/20261013-008.html</link>
+<guid isPermaLink="false">maso-feed-F008</guid>
+<category>사내 공지</category>
+<author>briefing@maso-finance.example (마소금융그룹 사내 소식(가상))</author>
+<pubDate>Tue, 13 Oct 2026 16:00:00 +0900</pubDate>
+<description>경영기획부가 다음 주부터 평일 아침 금융 브리핑을 시범 운영한다. 공개 자료만 쓰고 출처 링크를 함께 싣는다. (출처: 마소금융그룹 사내 소식(가상) · 실습용 가상 기사)</description>
+</item>
+<item>
+<title>생성형 AI 내부 활용 가이드 초안 공개</title>
+<link>https://news.maso-finance.example/briefing/20261013-007.html</link>
+<guid isPermaLink="false">maso-feed-F007</guid>
+<category>규제</category>
+<author>briefing@maso-finance.example (가상 금융정책 브리핑)</author>
+<pubDate>Tue, 13 Oct 2026 11:15:00 +0900</pubDate>
+<description>감독당국(가상)이 금융회사의 생성형 AI 내부 활용 가이드 초안을 공개했다. 고객 정보 입력 금지와 결과물 사람 검토를 핵심 원칙으로 담았다. (출처: 가상 금융정책 브리핑 · 실습용 가상 기사)</description>
+</item>
+<item>
+<title>코스피 이틀째 상승, 금융주 강세</title>
+<link>https://news.maso-finance.example/briefing/20261013-006.html</link>
+<guid isPermaLink="false">maso-feed-F006</guid>
+<category>시장</category>
+<author>briefing@maso-finance.example (가상 마켓 데일리)</author>
+<pubDate>Tue, 13 Oct 2026 09:40:00 +0900</pubDate>
+<description>코스피가 이틀 연속 오르며 2,980선에 다가갔다. 은행·보험 업종이 상승을 이끌었다. (출처: 가상 마켓 데일리 · 실습용 가상 기사)</description>
+</item>
+<item>
+<title>CD 91일물 금리 보합, 대출금리 변동 제한적</title>
+<link>https://news.maso-finance.example/briefing/20261013-005.html</link>
+<guid isPermaLink="false">maso-feed-F005</guid>
+<category>금리</category>
+<author>briefing@maso-finance.example (마소경제신문(가상))</author>
+<pubDate>Tue, 13 Oct 2026 07:05:00 +0900</pubDate>
+<description>CD 91일물 금리가 2.7% 안팎에서 움직이지 않아 변동금리 대출 금리도 당분간 크게 바뀌지 않을 것으로 보인다. (출처: 마소경제신문(가상) · 실습용 가상 기사)</description>
+</item>
+<item>
+<title>마소은행, 비대면 예금 가입 화면 개편</title>
+<link>https://news.maso-finance.example/briefing/20261012-004.html</link>
+<guid isPermaLink="false">maso-feed-F004</guid>
+<category>사내 공지</category>
+<author>briefing@maso-finance.example (마소금융그룹 사내 소식(가상))</author>
+<pubDate>Mon, 12 Oct 2026 15:20:00 +0900</pubDate>
+<description>마소뱅크 앱의 예금 가입 화면이 10월 20일부터 바뀐다. 우대금리 조건을 한 화면에서 확인할 수 있게 된다. (출처: 마소금융그룹 사내 소식(가상) · 실습용 가상 기사)</description>
+</item>
+<item>
+<title>대출 설명의무 점검 강화 방침</title>
+<link>https://news.maso-finance.example/briefing/20261012-003.html</link>
+<guid isPermaLink="false">maso-feed-F003</guid>
+<category>규제</category>
+<author>briefing@maso-finance.example (가상 금융정책 브리핑)</author>
+<pubDate>Mon, 12 Oct 2026 10:00:00 +0900</pubDate>
+<description>감독당국(가상)이 대출 상품 설명서와 실제 설명 내용이 일치하는지 연말까지 점검하겠다고 밝혔다. 금리·수수료 안내 누락이 주요 점검 대상이다. (출처: 가상 금융정책 브리핑 · 실습용 가상 기사)</description>
+</item>
+<item>
+<title>원·달러 환율 1,390원대로 올라</title>
+<link>https://news.maso-finance.example/briefing/20261012-002.html</link>
+<guid isPermaLink="false">maso-feed-F002</guid>
+<category>시장</category>
+<author>briefing@maso-finance.example (마소경제신문(가상))</author>
+<pubDate>Mon, 12 Oct 2026 08:30:00 +0900</pubDate>
+<description>해외 금리 불확실성으로 원·달러 환율이 1,390원대로 올랐다. 수입 기업의 환전 수요가 늘었다는 분석이 나왔다. (출처: 마소경제신문(가상) · 실습용 가상 기사)</description>
+</item>
+<item>
+<title>시장금리 하락세, 은행 예금금리 인하 움직임</title>
+<link>https://news.maso-finance.example/briefing/20261012-001.html</link>
+<guid isPermaLink="false">maso-feed-F001</guid>
+<category>금리</category>
+<author>briefing@maso-finance.example (마소경제신문(가상))</author>
+<pubDate>Mon, 12 Oct 2026 07:10:00 +0900</pubDate>
+<description>국고채 3년물 금리가 한 주 사이 0.08%포인트 내리면서 일부 은행이 정기예금 금리를 0.05~0.10%포인트 낮추는 방안을 검토하고 있다. (출처: 마소경제신문(가상) · 실습용 가상 기사)</description>
+</item>
+</channel>
+</rss>

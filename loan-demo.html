@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>마소은행 대출 접수 데모(가상)</title>
+<style>
+  :root { --navy:#1f3864; --line:#d5dbe5; --bg:#f4f6fa; --err:#c00000; --ok:#1e7b3c; --warn:#a15c00; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:"Malgun Gothic","Apple SD Gothic Neo","Noto Sans KR",sans-serif; background:var(--bg); color:#1b1f24; }
+  .notice { background:#fff3cd; color:#664d03; padding:8px 16px; font-size:14px; text-align:center; border-bottom:1px solid #ffe08a; }
+  header { background:var(--navy); color:#fff; padding:14px 24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; }
+  header h1 { margin:0; font-size:20px; }
+  header .who { font-size:13px; opacity:.85; }
+  nav { display:flex; gap:4px; padding:0 24px; background:#fff; border-bottom:1px solid var(--line); }
+  nav button { border:0; background:none; padding:14px 18px; font-size:15px; cursor:pointer; border-bottom:3px solid transparent; font-family:inherit; }
+  nav button[aria-selected="true"] { border-color:var(--navy); color:var(--navy); font-weight:bold; }
+  main { max-width:960px; margin:24px auto; padding:0 16px; }
+  section { display:none; background:#fff; border:1px solid var(--line); border-radius:8px; padding:24px; }
+  section.active { display:block; }
+  h2 { margin-top:0; font-size:18px; color:var(--navy); }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px 24px; }
+  label { display:block; font-weight:bold; font-size:14px; margin-bottom:6px; }
+  input, select { width:100%; padding:9px 10px; font-size:15px; border:1px solid var(--line); border-radius:6px; font-family:inherit; }
+  .hint { font-size:12px; color:#5b6573; margin-top:4px; }
+  .msg { font-size:13px; margin-top:4px; min-height:18px; color:var(--err); }
+  .buttons { margin-top:20px; display:flex; gap:8px; flex-wrap:wrap; }
+  .btn { padding:10px 18px; font-size:15px; border-radius:6px; border:1px solid var(--navy); background:#fff; color:var(--navy); cursor:pointer; font-family:inherit; }
+  .btn.primary { background:var(--navy); color:#fff; }
+  .btn.danger { border-color:var(--err); color:var(--err); }
+  table { width:100%; border-collapse:collapse; font-size:14px; }
+  th, td { border-bottom:1px solid var(--line); padding:8px 6px; text-align:left; }
+  th { background:#eef2f8; white-space:nowrap; }
+  td:not(:nth-child(6)) { white-space:nowrap; }
+  td.num { text-align:right; }
+  tr.bad td { background:#fdecec; }
+  .tag { display:inline-block; padding:2px 8px; border-radius:10px; font-size:12px; }
+  .tag.ok { background:#e3f4e8; color:var(--ok); }
+  .tag.bad { background:#fdecec; color:var(--err); }
+  .tag.sent { background:#e7ecf6; color:var(--navy); }
+  .summary { display:flex; gap:12px; margin-bottom:16px; flex-wrap:wrap; }
+  .summary div { background:var(--bg); border-radius:6px; padding:10px 14px; font-size:14px; }
+  .scroll { overflow-x:auto; }
+  dialog { border:1px solid var(--line); border-radius:10px; padding:0; max-width:520px; width:92%; }
+  dialog::backdrop { background:rgba(0,0,0,.4); }
+  .dlg-head { background:var(--navy); color:#fff; padding:14px 20px; font-weight:bold; }
+  .dlg-body { padding:20px; font-size:15px; line-height:1.6; }
+  .dlg-body .warn { color:var(--warn); font-weight:bold; }
+  .dlg-foot { padding:12px 20px 20px; display:flex; gap:8px; justify-content:flex-end; }
+  footer { text-align:center; font-size:12px; color:#5b6573; padding:24px 16px; }
+</style>
+</head>
+<body>
+<div class="notice" role="note">본 화면은 실습용 가상 화면입니다. 입력한 내용은 이 브라우저 안에만 있고 어디에도 전송되지 않습니다. 실제 고객 정보를 입력하지 마십시오.</div>
+<header>
+  <h1>마소은행 개인여신 접수 시스템 <small style="font-weight:normal">(가상 데모)</small></h1>
+  <div class="who">접속자 · 영업점 직원 G-01 · 강남지점(가상)</div>
+</header>
+<nav role="tablist">
+  <button role="tab" aria-selected="true" data-tab="entry" id="tab-entry">① 대출 접수 입력</button>
+  <button role="tab" aria-selected="false" data-tab="list" id="tab-list">② 접수 목록 · 점검</button>
+</nav>
+<main>
+  <!-- W01 접수 입력 -->
+  <section id="entry" class="active" aria-labelledby="tab-entry">
+    <h2>대출 접수 입력</h2>
+    <form id="form" novalidate>
+      <div class="grid">
+        <div>
+          <label for="cust">고객 코드</label>
+          <input id="cust" name="cust" placeholder="예: 고객 A-001" autocomplete="off">
+          <div class="hint">고객 이름 대신 "고객 A-001" 형식의 코드를 씁니다.</div>
+          <div class="msg" id="m-cust"></div>
+        </div>
+        <div>
+          <label for="product">대출 상품</label>
+          <select id="product" name="product">
+            <option value="">선택하세요</option>
+            <option>신용대출</option>
+            <option>예금담보대출</option>
+            <option>주택담보대출</option>
+          </select>
+          <div class="msg" id="m-product"></div>
+        </div>
+        <div>
+          <label for="income">연소득(만원)</label>
+          <input id="income" name="income" inputmode="numeric" placeholder="예: 5200">
+          <div class="hint">신용대출 한도 계산에 씁니다(지침 제12조).</div>
+          <div class="msg" id="m-income"></div>
+        </div>
+        <div>
+          <label for="deposit">담보 예금 잔액(만원)</label>
+          <input id="deposit" name="deposit" inputmode="numeric" placeholder="예금담보대출일 때만">
+          <div class="hint">예금담보대출 한도 계산에 씁니다(지침 제14조).</div>
+          <div class="msg" id="m-deposit"></div>
+        </div>
+        <div>
+          <label for="amount">신청 금액(만원)</label>
+          <input id="amount" name="amount" inputmode="numeric" placeholder="예: 3000">
+          <div class="msg" id="m-amount"></div>
+        </div>
+        <div>
+          <label for="term">대출 기간(개월)</label>
+          <input id="term" name="term" inputmode="numeric" placeholder="예: 12">
+          <div class="msg" id="m-term"></div>
+        </div>
+      </div>
+      <div class="buttons">
+        <button type="button" class="btn" id="btn-check">입력값 검증</button>
+        <button type="submit" class="btn primary" id="btn-add">접수 목록에 추가</button>
+        <button type="reset" class="btn" id="btn-reset">지우기</button>
+      </div>
+      <p id="form-result" class="hint" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <!-- W02 접수 목록 · 점검 -->
+  <section id="list" aria-labelledby="tab-list">
+    <h2>접수 목록 · 점검</h2>
+    <div class="summary" id="summary"></div>
+    <div class="scroll">
+      <table id="tbl">
+        <thead><tr><th>접수 번호</th><th>고객 코드</th><th>상품</th><th class="num">신청 금액(만원)</th><th class="num">기간(개월)</th><th>점검 결과</th><th>상태</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="buttons">
+      <button type="button" class="btn danger" id="btn-del">오류 행 삭제</button>
+      <button type="button" class="btn primary" id="btn-submit">본부 심사부서로 제출</button>
+    </div>
+    <p id="list-result" class="hint" aria-live="polite"></p>
+  </section>
+</main>
+
+<!-- W03 제출 확인 창(승인 지점 연습) -->
+<dialog id="confirm" aria-labelledby="dlg-title">
+  <div class="dlg-head" id="dlg-title">제출 확인</div>
+  <div class="dlg-body">
+    <p id="dlg-text"></p>
+    <p class="warn">제출하면 되돌릴 수 없습니다. 사람이 내용을 확인한 뒤에 눌러 주십시오.</p>
+    <p class="hint">실습용 화면이므로 실제로는 아무 곳에도 전송되지 않습니다.</p>
+  </div>
+  <div class="dlg-foot">
+    <button type="button" class="btn" id="dlg-cancel">취소</button>
+    <button type="button" class="btn primary" id="dlg-ok">제출</button>
+  </div>
+</dialog>
+
+<footer>마소은행(가상) 여신기획부 · 실습용 가상 화면 · 한도 기준은 「마소은행 여신 업무 지침(가상)」 제12조 · 제13조 · 제14조 · 제15조</footer>
+
+<script>
+// 한도 기준(마소은행 여신 업무 지침(가상))
+const RULE = {
+  '신용대출':     { maxTerm: 12,  note: '연소득 100% 이내, 최대 1억 원(제12조) · 기간 1년 이내(제13조)' },
+  '예금담보대출': { maxTerm: 36,  note: '담보 예금 잔액 95% 이내(제14조) · 담보 예금 만기 이내' },
+  '주택담보대출': { maxTerm: 480, note: '최장 40년(제15조) · 영업점 전용 상품' }
+};
+const $ = (id) => document.getElementById(id);
+const num = (v) => { const s = String(v ?? '').replace(/,/g, '').trim(); return s === '' || isNaN(s) ? null : Number(s); };
+
+// 미리 들어 있는 접수 목록(가상) — 오류 행 3개 포함
+let rows = [
+  { no: 'L-1016-001', cust: '고객 A-001', product: '신용대출',     income: 5200, deposit: null, amount: 3000,  term: 12 },
+  { no: 'L-1016-002', cust: '고객 A-002', product: '예금담보대출', income: null, deposit: 2000, amount: 1900,  term: 12 },
+  { no: 'L-1016-003', cust: '고객 A-003', product: '신용대출',     income: 4000, deposit: null, amount: 6000,  term: 12 },
+  { no: 'L-1016-004', cust: '고객 A-004', product: '주택담보대출', income: 7800, deposit: null, amount: 30000, term: 360 },
+  { no: 'L-1016-005', cust: '',            product: '신용대출',     income: 3600, deposit: null, amount: 1500,  term: 12 },
+  { no: 'L-1016-006', cust: '고객 A-006', product: '신용대출',     income: 6100, deposit: null, amount: 2000,  term: 24 },
+  { no: 'L-1016-007', cust: '고객 A-007', product: '예금담보대출', income: null, deposit: 5000, amount: 4500,  term: 6 }
+].map(r => ({ ...r, status: '접수' }));
+let seq = rows.length;
+
+function validate(r) {
+  const e = {};
+  if (!r.cust) e.cust = '고객 코드를 입력하세요.';
+  else if (!/^고객 [A-Z]-\d{3}$/.test(r.cust)) e.cust = '"고객 A-001" 형식으로 입력하세요. 실제 이름은 쓰지 않습니다.';
+  if (!r.product) e.product = '대출 상품을 고르세요.';
+  if (r.amount === null || r.amount <= 0) e.amount = '신청 금액을 숫자로 입력하세요.';
+  if (r.term === null || r.term <= 0) e.term = '대출 기간을 숫자로 입력하세요.';
+  if (r.product === '신용대출') {
+    if (r.income === null) e.income = '신용대출은 연소득이 필요합니다.';
+    else if (r.amount !== null && r.amount > Math.min(r.income, 10000)) e.amount = `한도 초과 · 연소득 100% 이내, 최대 1억 원(가능 ${Math.min(r.income, 10000).toLocaleString()}만원)`;
+  }
+  if (r.product === '예금담보대출') {
+    if (r.deposit === null) e.deposit = '예금담보대출은 담보 예금 잔액이 필요합니다.';
+    else if (r.amount !== null && r.amount > r.deposit * 0.95) e.amount = `한도 초과 · 담보 예금 잔액의 95% 이내(가능 ${Math.floor(r.deposit * 0.95).toLocaleString()}만원)`;
+  }
+  if (r.product && r.term !== null && r.term > RULE[r.product].maxTerm) e.term = `기간 초과 · ${r.product} 최대 ${RULE[r.product].maxTerm}개월`;
+  return e;
+}
+
+function readForm() {
+  return { cust: $('cust').value.trim(), product: $('product').value, income: num($('income').value),
+           deposit: num($('deposit').value), amount: num($('amount').value), term: num($('term').value) };
+}
+function showErrors(e) {
+  for (const k of ['cust', 'product', 'income', 'deposit', 'amount', 'term']) $('m-' + k).textContent = e[k] || '';
+  const n = Object.keys(e).length;
+  $('form-result').textContent = n ? `확인할 항목 ${n}개가 있습니다.` : '검증 통과 · 접수 목록에 추가할 수 있습니다.';
+  $('form-result').style.color = n ? 'var(--err)' : 'var(--ok)';
+  return n === 0;
+}
+
+$('btn-check').onclick = () => showErrors(validate(readForm()));
+$('form').onsubmit = (ev) => {
+  ev.preventDefault();
+  const r = readForm();
+  if (!showErrors(validate(r))) return;
+  seq += 1;
+  rows.push({ ...r, no: `L-1016-${String(seq).padStart(3, '0')}`, status: '접수' });
+  $('form').reset();
+  $('form-result').textContent = `접수 목록에 추가했습니다(접수 번호 L-1016-${String(seq).padStart(3, '0')}).`;
+  render();
+};
+$('btn-reset').onclick = () => { setTimeout(() => showErrors({}), 0); $('form-result').textContent = ''; };
+
+function render() {
+  const tb = document.querySelector('#tbl tbody');
+  tb.innerHTML = '';
+  let bad = 0, ok = 0, sent = 0;
+  for (const r of rows) {
+    const e = validate(r); const isBad = Object.keys(e).length > 0;
+    if (r.status === '제출 완료') sent++; else if (isBad) bad++; else ok++;
+    const tr = document.createElement('tr');
+    if (isBad && r.status !== '제출 완료') tr.className = 'bad';
+    const cells = [r.no, r.cust || '(비어 있음)', r.product, (r.amount ?? '').toLocaleString(), r.term ?? ''];
+    cells.forEach((v, i) => { const td = document.createElement('td'); td.textContent = v; if (i === 3 || i === 4) td.className = 'num'; tr.appendChild(td); });
+    const chk = document.createElement('td');
+    chk.innerHTML = isBad ? `<span class="tag bad">오류</span> ${Object.values(e).join(' / ')}` : '<span class="tag ok">정상</span>';
+    tr.appendChild(chk);
+    const st = document.createElement('td');
+    st.innerHTML = r.status === '제출 완료' ? '<span class="tag sent">제출 완료</span>' : r.status;
+    tr.appendChild(st);
+    tb.appendChild(tr);
+  }
+  $('summary').innerHTML = `<div>전체 <b>${rows.length}</b>건</div><div>정상 <b>${ok}</b>건</div><div style="color:var(--err)">오류 <b>${bad}</b>건</div><div>제출 완료 <b>${sent}</b>건</div>`;
+}
+
+$('btn-del').onclick = () => {
+  const before = rows.length;
+  rows = rows.filter(r => r.status === '제출 완료' || Object.keys(validate(r)).length === 0);
+  $('list-result').textContent = `오류 행 ${before - rows.length}건을 목록에서 뺐습니다.`;
+  render();
+};
+$('btn-submit').onclick = () => {
+  const ready = rows.filter(r => r.status !== '제출 완료' && Object.keys(validate(r)).length === 0);
+  const bad = rows.filter(r => r.status !== '제출 완료' && Object.keys(validate(r)).length > 0);
+  if (ready.length === 0) { $('list-result').textContent = '제출할 정상 건이 없습니다.'; return; }
+  const total = ready.reduce((s, r) => s + (r.amount || 0), 0);
+  $('dlg-text').innerHTML = `정상 <b>${ready.length}건</b>(신청 금액 합계 <b>${total.toLocaleString()}만원</b>)을 본부 심사부서로 제출합니다.` +
+    (bad.length ? `<br>오류 ${bad.length}건은 제출되지 않고 목록에 남습니다.` : '');
+  $('confirm').showModal();
+};
+$('dlg-cancel').onclick = () => { $('confirm').close(); $('list-result').textContent = '제출을 취소했습니다.'; };
+$('dlg-ok').onclick = () => {
+  rows.forEach(r => { if (r.status !== '제출 완료' && Object.keys(validate(r)).length === 0) r.status = '제출 완료'; });
+  $('confirm').close();
+  $('list-result').textContent = '제출 완료로 표시했습니다(실습용 화면이므로 실제 전송은 없습니다).';
+  render();
+};
+
+document.querySelectorAll('nav button').forEach(b => b.onclick = () => {
+  document.querySelectorAll('nav button').forEach(x => x.setAttribute('aria-selected', x === b));
+  document.querySelectorAll('section').forEach(s => s.classList.toggle('active', s.id === b.dataset.tab));
+});
+render();
+</script>
+</body>
+</html>
